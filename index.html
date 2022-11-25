@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="neovim.css" />
+    <style>
+      body {
+        color: black;
+        background: white;
+        font-size: 1rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: white;
+          background: black;
+        }
+      }
+
+      pre,
+      code {
+        tab-size: 4;
+      }
+
+      pre {
+        background: #d5d6db;
+        color: #565a6e;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        pre {
+          background: #1a1b26;
+          color: var(--hljs-b-white);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <pre><code class="language-lua">-- Using a Lua function in a key mapping in 0.7
+vim.api.nvim_set_keymap("n", "&lt;leader&gt;H", "", {
+	noremap = true,
+	callback = function()
+		print("Hello world!")
+	end,
+})
+
+-- Creating an autocommand in 0.7
+vim.api.nvim_create_autocmd("BufEnter", {
+		pattern = "*",
+		callback = function(args)
+				print("Entered buffer " .. args.buf .. "!")
+		end,
+		desc = "Tell me when I enter a buffer",
+})
+
+-- Creating a custom user command in 0.7
+vim.api.nvim_create_user_command("SayHello", function(args)
+		print("Hello " .. args.args)
+end, {
+		nargs = "*",
+		desc = "Say hi to someone",
+})
+	</code></pre>
+
+    <pre><code class="language-vim">
+set termguicolors
+au BufPreWrite * echo "hello"
+		</code></pre>
+
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
+   return 0;
+}
+		</code></pre>
+
+    <script type="module">
+      import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js";
+      // and it's easy to individually load additional languages
+      import lua from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/lua.min.js";
+      hljs.registerLanguage("lua", lua);
+
+      // and it's easy to individually load additional languages
+      import c from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/c.min.js";
+      hljs.registerLanguage("c", c);
+
+      import vim from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/vim.min.js";
+      hljs.registerLanguage("vim", vim);
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

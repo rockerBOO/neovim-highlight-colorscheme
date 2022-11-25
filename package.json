@@ -1,0 +1,20 @@
+{
+  "name": "neovim-highlightjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "build": "postcss neovim.css -o neovim.min.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "postcss-minify": "^1.1.0",
+    "postcss-preset-env": "^7.8.3",
+    "prettier": "^2.8.0",
+    "prettier_d_slim": "^1.2.0"
+  }
+}
