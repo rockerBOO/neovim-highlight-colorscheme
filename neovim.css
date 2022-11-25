@@ -14,18 +14,18 @@
   --hljs-red: #8c4351;
   --hljs-green: #33635c;
   --hljs-yellow: #965027;
-  --hljs-blue: #0f4b6e;
+  --hljs-blue: #0f2d86;
   --hljs-purple: #5a4a78;
   --hljs-cyan: #166775;
-  --hljs-white: #565a6e;
+  --hljs-white: #444;
 
   /* bright */
   --hljs-b-black: #565f89;
   --hljs-b-red: #8c4351;
-  --hljs-b-green: #485e30;
+  --hljs-b-green: #005136;
   --hljs-b-yellow: #8f5e15;
   --hljs-b-blue: #34548a;
-  --hljs-b-purple: #5a4a78;
+  --hljs-b-purple: #5329a2;
   --hljs-b-cyan: #166775;
   --hljs-b-white: #343b58;
 }
@@ -84,7 +84,7 @@
 .hljs-type,
 .hljs-params,
 .hljs-link {
-  color: var(--hljs-yellow);
+  color: var(--hljs-blue);
 }
 
 /*  Yellow */
@@ -92,6 +92,7 @@
 .hljs-built_in,
 .hljs-attribute {
   color: var(--hljs-b-yellow);
+	color: var(--hljs-b-green);
 }
 /* cyan */
 /* INFO: Language support functions, CSS HTML elements */
@@ -130,6 +131,7 @@
 /* Blue */
 /* INFO:  	Function names, CSS property names, Terminal Blue */
 .hljs-code,
+.hljs-function,
 .hljs-formula,
 .hljs-section {
   color: var(--hljs-blue);
@@ -143,7 +145,7 @@
 .hljs-keyword,
 .hljs-char.escape_,
 .hljs-attr {
-  color: var(--hljs-b-purple);
+  color: var(--hljs-cyan);
 }
 
 /* white*/
@@ -153,13 +155,11 @@
 }
 
 .hljs {
-  background: #d5d6db;
-  color: #565a6e;
+    color: var(--hljs-b-white);
 }
 
 @media (prefers-color-scheme: dark) {
   .hljs {
-    background: #1a1b26;
     color: var(--hljs-b-white);
   }
 }
